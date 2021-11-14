@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Js_function_assignment</title>
+        <style>
+            body{
+                background-color: #233052;
+            }
+            .container{
+                width: 80%;
+                height: auto;
+                margin: 100px auto 50px auto;
+                background-color: #111b3c;
+                border-radius: 10px;
+                box-shadow: 0 0 10px #9e9aaf;
+            }
+            .qusAnsDiv{
+                width: 100%;
+                height: auto;
+            }
+            .qusDiv{
+                margin: 10px 20px;
+                font-size: 20px;
+                color: #ddd;
+                padding: 20px 0px 10px 0px;
+                border-bottom: 1px solid #f0f0f0;
+            }
+            .ansCodeDiv{
+                width: 100%;
+                height: auto;
+                padding-bottom: 10px;
+            }
+            .qusDiv{
+                width: 95%;
+                display: flex;
+            }
+            .ansCodeDiv{
+                width: 95%;
+                color: #f0f0f0;
+                font-size: 14px;
+            }
+            .btnDiv{
+                width: 100%;
+            }
+            .btnDiv button{
+                padding: 5px 10px;
+                border-radius: 5px;
+                border: none;
+                color: #f0f0f0;
+                background-color: rgb(66, 25, 1);
+                float: right;
+            }
+            .btnDiv button:hover{
+                transform: scale(1.1);
+            }
+            .funCode{
+                color: darkorange;
+            }
+            .inputBox{
+                width: 80%;
+                margin: auto;
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .input{
+                width: 300px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="qusAnsDiv">
+                <div class="qusDiv">
+                   <div>Q.1:&nbsp;&nbsp;</div>Create an object and store the height and radius of a cylinder in it. Create a function to calculate the volume and surface area of the cylinder.
+                </div>
+                <div class="ansCodeDiv">
+                    <div class="btnDiv"><button id="runBtn1">Run Code</button></div><br>
+                    <pre>
+                        <span class="funCode">
+                            function areaAndVolumeOFCylinder(){
+                                const cylinder = {
+                                    height: prompt("Height of cylinder","0"),
+                                    radius: prompt("Radius of cylinder","0"),
+                                    volumeOfCylinder: function(){
+                                        let c = 3;
+                                        return 3.141 * Math.pow(this.radius, 2) * this.height;
+                                    },
+                                    areaOfCylinder: function (){
+                                        return 2 * (3.141) * this.radius * this.height;
+                                    }
+                                };
+                        </span>
+                                var volumeOfCylinder = cylinder.volumeOfCylinder(); 
+                                console.log("The volume of cylinder is: "+volumeOfCylinder); 
+                                alert("The volume of cylinder is: "+volumeOfCylinder);
+                                
+                                var areaOfCylinder = cylinder.areaOfCylinder();
+                                console.log("The area of cylinder is: "+areaOfCylinder);
+                                alert("The area of cylinder is: "+areaOfCylinder);
+                            }
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="margin-top: 50px;">
+            <div class="qusAnsDiv">
+                <div class="qusDiv">
+                   <div>Q.2:&nbsp;&nbsp;</div>Create a function that takes in input as voltage and current and returns the power. 
+                </div>
+                <div class="ansCodeDiv">
+                    <div class="btnDiv"><button id="runBtn2">Run Code</button></div><br>
+                    <pre>
+                        <span class="funCode">
+                            function calculatePower(){
+                                let inputVoltage = prompt("Input voltage value","0");
+                                let inputCurrent = prompt("Input current value","0");
+                                
+                                let outputPower = inputVoltage * inputCurrent;
+                        
+                                alert("The output power is: "+outputPower);
+                                return outputPower;
+                            }
+                        </span>
+                        document.querySelector("#runBtn").addEventListener("click", function(){
+                            let powerVal = calculatePower;
+                            console.log("The output power is: "+powerVal());
+                        });
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="container" style="margin-top: 50px;">
+            <div class="qusAnsDiv">
+                <div class="qusDiv">
+                   <div>Q.3:&nbsp;&nbsp;</div>I have a bucket containing an amount of navy blue paint and I'd like to paint as many walls as possible. Create a function that returns the number of complete walls that I can paint, before I need to head to the shops to buy more.
+                                                n is the number of square meters I can paint.
+                                                w and h are the widths and heights of a single wall in meters
+                </div>
+                <div class="ansCodeDiv" style="font-size: 15px;">
+                    <div class="btnDiv"><button id="runBtn3">Run Code</button></div><br>
+                    <pre>
+                        <span class="funCode">
+                            const wallPrint = (n, w, h) => {
+                                let = canPaintWallArea = n;
+                                let totalAreaOfWall = w * h;
+                                let canWallPrintNum = canPaintWallArea / totalAreaOfWall;
+                                return parseInt(canWallPrintNum);
+                            }
+                        </span>
+                        document.querySelector("#runBtn3").addEventListener("click", function(){
+                            let n = prompt("n value","0");
+                            let w = prompt("w value","0");
+                            let h = prompt("h value","0");
+                    
+                            let numOfWallPrint = wallPrint(n, w, h);
+                            console.log("Remain Paint wall area is: "+numOfWallPrint);
+                            alert("Remain Paint wall area is: "+numOfWallPrint);
+                        });
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
